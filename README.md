@@ -13,7 +13,8 @@ Linux 内核版本4.0.4
 
 但是有几个选项一定不能关，例如Kernel support for ELF binaries和Kernel support for scripts starting with #!  
 最终配置可以参考config文件  
-kernel is 815k
+kernel is 815k  
+最小运行内存21m，20m不能运行  
 
 Busybox按照教程进行编译并安装，然后在_install/etc/init.d目录下建立rcS文件并赋予执行权限，内容如下
 ```
@@ -38,7 +39,7 @@ ip route add default via 10.0.2.2
 
 ## Kernel Mode Linux
 下载[KML patch for 4.0](http://web.yl.is.s.u-tokyo.ac.jp/~tosh/kml/kml/for4.x/kml_4.0_001.diff.gz)  
-
+放到4.0.4文件夹内,使用patch -p1 < kml_4.0_001.diff打补丁
 编写一个简单的测试程序
 ```
 #include <stdio.h>
