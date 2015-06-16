@@ -54,8 +54,8 @@ int main(int argc, char **argv)
 使用gcc -static参数编译成静态程序a.out，分别放到rootfs的根文件夹以及/trusted文件夹下
 运行根目录下的程序a.out  
 通过gdb使得程序在main函数时中断
-![user](user.png)
+![user](user.png)  
 通过CS和SS的DPL=3可以看出是处于用户态  
 而/trusted目录下的a.out文件则会以内核态执行  
-![kernel](kernel.png)
+![kernel](kernel.png)  
 可以看到CS和SS的DPL=0，是处于内核态  
