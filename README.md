@@ -25,7 +25,7 @@ mount -t sysfs none /sys
 将整个_install文件夹做成一个img映像  
 `find . |cpio -o --format=newc > /rootfs.img`
 使用以下命令运行  
-`qemu-system-i386 -kernel bzImage -initrd rootfs.img -append "root=/dev/ram rdinit=sbin/init" -m 20`
+`qemu-system-i386 -kernel bzImage -initrd rootfs.img -append "root=/dev/ram rdinit=sbin/init" -m 21`
 最小运行内存21m，20m不能运行  
 ### 遇到的问题  
 主要是网络不通的问题，这里要感谢杨海宇同学的帮助，向/etc/init.d/rcS文件添加以下几条命令即可使用wget命令进行通信  
